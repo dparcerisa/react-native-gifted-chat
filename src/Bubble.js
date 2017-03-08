@@ -116,10 +116,29 @@ export default class Bubble extends React.Component {
     }
   }
 
+  getContainerStyle(){
+    if(this.props.currentMessage.location || this.props.currentMessage.quickreplies){
+      return this.props.customViewContainerStyle[this.props.position]
+    }else{
+      return this.props.containerStyle[this.props.position]
+    }
+  }
+
+  getWrapperStyle(){
+    if(this.props.currentMessage.location || this.props.currentMessage.quickreplies){
+      return this.props.customViewWrapperStyle[this.props.position]
+    }else{
+      return this.props.wrapperStyle[this.props.position]
+    }
+  }
+
   render() {
+    var containerStyleConditional = this.getContainerStyle()
+    var wrapperStyleConditional = this.getWrapperStyle()
+
     return (
-      <View style={[styles[this.props.position].container, this.props.containerStyle[this.props.position]]}>
-        <View style={[styles[this.props.position].wrapper, this.props.wrapperStyle[this.props.position], this.handleBubbleToNext(), this.handleBubbleToPrevious()]}>
+      <View style={[styles[this.props.position].container, containerStyleConditional]}>
+        <View style={[styles[this.props.position].wrapper, wrapperStyleConditional, this.handleBubbleToNext(), this.handleBubbleToPrevious()]}>
           <TouchableWithoutFeedback
             onLongPress={this.onLongPress}
             accessibilityTraits="text"
@@ -155,10 +174,10 @@ const styles = {
       justifyContent: 'flex-end',
     },
     containerToNext: {
-      borderBottomLeftRadius: 3,
+      borderBottomLeftRadius: 0,
     },
     containerToPrevious: {
-      borderTopLeftRadius: 3,
+      borderTopLeftRadius: 0,
     },
   }),
   right: StyleSheet.create({
@@ -174,10 +193,10 @@ const styles = {
       justifyContent: 'flex-end',
     },
     containerToNext: {
-      borderBottomRightRadius: 3,
+      borderBottomRightRadius: 0,
     },
     containerToPrevious: {
-      borderTopRightRadius: 3,
+      borderTopRightRadius: 0,
     },
   }),
   bottom: {
@@ -215,6 +234,8 @@ Bubble.defaultProps = {
   nextMessage: {},
   previousMessage: {},
   containerStyle: {},
+  customViewContainerStyle:{},
+  customViewWrapperStyle:{},
   wrapperStyle: {},
   tickStyle: {},
   containerToNextStyle: {},
@@ -236,6 +257,14 @@ Bubble.propTypes = {
   nextMessage: React.PropTypes.object,
   previousMessage: React.PropTypes.object,
   containerStyle: React.PropTypes.shape({
+    left: View.propTypes.style,
+    right: View.propTypes.style,
+  }),
+  customViewContainerStyle: React.PropTypes.shape({
+    left: View.propTypes.style,
+    right: View.propTypes.style,
+  }),
+  customViewWrapperStyle: React.PropTypes.shape({
     left: View.propTypes.style,
     right: View.propTypes.style,
   }),
