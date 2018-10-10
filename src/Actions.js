@@ -105,6 +105,6 @@ Actions.propTypes = {
   optionTintColor: PropTypes.string,
   icon: PropTypes.func,
   onPressActionButton: PropTypes.func,
-  containerStyle: View.propTypes.style,
-  iconTextStyle: Text.propTypes.style,
+  containerStyle: PropTypes.style,
+  iconTextStyle: PropTypes.style,
 };
