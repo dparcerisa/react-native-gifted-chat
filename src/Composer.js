@@ -90,5 +90,5 @@ Composer.propTypes = {
   onTextChanged: PropTypes.func,
   onInputSizeChanged: PropTypes.func,
   multiline: PropTypes.bool,
-  textInputStyle: TextInput.propTypes.style,
+  textInputStyle: PropTypes.style,
 };

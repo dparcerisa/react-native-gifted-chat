@@ -95,8 +95,8 @@ LoadEarlier.propTypes = {
   onLoadEarlier: PropTypes.func,
   isLoadingEarlier: PropTypes.bool,
   label: PropTypes.string,
-  containerStyle: View.propTypes.style,
-  wrapperStyle: View.propTypes.style,
-  textStyle: Text.propTypes.style,
-  activityIndicatorStyle: View.propTypes.style,
+  containerStyle: PropTypes.style,
+  wrapperStyle: PropTypes.style,
+  textStyle: PropTypes.style,
+  activityIndicatorStyle: PropTypes.style,
 };

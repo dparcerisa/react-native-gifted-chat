@@ -70,11 +70,11 @@ Time.propTypes = {
   position: PropTypes.oneOf(['left', 'right']),
   currentMessage: PropTypes.object,
   containerStyle: PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
   textStyle: PropTypes.shape({
-    left: Text.propTypes.style,
-    right: Text.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
 };

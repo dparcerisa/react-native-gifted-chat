@@ -60,6 +60,6 @@ Send.propTypes = {
   text: PropTypes.string,
   onSend: PropTypes.func,
   label: PropTypes.string,
-  containerStyle: View.propTypes.style,
-  textStyle: Text.propTypes.style,
+  containerStyle: PropTypes.style,
+  textStyle: PropTypes.style,
 };
