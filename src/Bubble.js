@@ -258,29 +258,29 @@ Bubble.propTypes = {
   nextMessage: PropTypes.object,
   previousMessage: PropTypes.object,
   containerStyle: PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
   customViewContainerStyle: PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
   customViewWrapperStyle: PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
   wrapperStyle: PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
   tickStyle: Text.propTypes.style,
   containerToNextStyle: PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
   containerToPreviousStyle: PropTypes.shape({
-    left: View.propTypes.style,
-    right: View.propTypes.style,
+    left: PropTypes.style,
+    right: PropTypes.style,
   }),
   //TODO: remove in next major release
   isSameDay: PropTypes.func,
